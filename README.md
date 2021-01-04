@@ -37,12 +37,14 @@ Este proyecto fue creado con: [Create React App](https://github.com/facebook/cre
 
 ![1](https://user-images.githubusercontent.com/7141537/103563063-264d8500-4e8a-11eb-923f-3fd83e45a0a7.PNG)
 
+## Agregar registro
 ![2](https://user-images.githubusercontent.com/7141537/103563062-264d8500-4e8a-11eb-888f-c5e0647cbf2d.PNG)
 
+## Norrar registro 
 ![3](https://user-images.githubusercontent.com/7141537/103563061-25b4ee80-4e8a-11eb-82c1-fe33b2d1b103.PNG)
 
+## Vista agregar Gasto
 ![6](https://user-images.githubusercontent.com/7141537/103563066-26e61b80-4e8a-11eb-95d9-b15b5597d1dd.PNG)
-
 
 
 ### En construcción 
