@@ -1,5 +1,5 @@
-# soccer_cups_react -> Campeonatos de Mundo de Futbol. 
-Campeones Mundiales de Futbol - React - Api Json-server
+# react-financial-record -> Programa de manejo de Gatos.
+Manejo de gastos. React - redux - UseHook 
 
 Este proyecto fue creado con: [Create React App](https://github.com/facebook/create-react-app).
 
@@ -7,6 +7,21 @@ Este proyecto fue creado con: [Create React App](https://github.com/facebook/cre
 
 * React
 * Servicio APi - Json-server
+* Bootstrap
+* Tablas: 
+     react-bootstrap-table-next
+     react-bootstrap-table2-filter
+     react-bootstrap-table2-paginator
+* Redux:
+     react-redux
+     redux
+     redux-thunk
+* Navegación
+     react-router
+     react-router-dom
+* Plantillas - Menu, Iconos, botones...
+     semantic-ui-css
+     semantic-ui-react
 
 ### Código Fuente
 ![a](https://user-images.githubusercontent.com/7141537/103563074-277eb200-4e8a-11eb-899e-2e623c25d597.PNG)
@@ -20,9 +35,12 @@ Este proyecto fue creado con: [Create React App](https://github.com/facebook/cre
 
 ### Salida:
 
-![3](https://user-images.githubusercontent.com/7141537/103563061-25b4ee80-4e8a-11eb-82c1-fe33b2d1b103.PNG)
-![2](https://user-images.githubusercontent.com/7141537/103563062-264d8500-4e8a-11eb-888f-c5e0647cbf2d.PNG)
 ![1](https://user-images.githubusercontent.com/7141537/103563063-264d8500-4e8a-11eb-923f-3fd83e45a0a7.PNG)
+
+![2](https://user-images.githubusercontent.com/7141537/103563062-264d8500-4e8a-11eb-888f-c5e0647cbf2d.PNG)
+
+![3](https://user-images.githubusercontent.com/7141537/103563061-25b4ee80-4e8a-11eb-82c1-fe33b2d1b103.PNG)
+
 ![6](https://user-images.githubusercontent.com/7141537/103563066-26e61b80-4e8a-11eb-95d9-b15b5597d1dd.PNG)
 
 
