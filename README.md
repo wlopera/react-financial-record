@@ -1,4 +1,4 @@
-# react-financial-record -> Programa de manejo de Gatos.
+# react-financial-record -> Programa de manejo de Gatos.                                   @wlopera - Enero 2021
 Manejo de gastos. React - redux - UseHook 
 
 Este proyecto fue creado con: [Create React App](https://github.com/facebook/create-react-app).
@@ -40,7 +40,7 @@ Este proyecto fue creado con: [Create React App](https://github.com/facebook/cre
 ## Agregar registro
 ![2](https://user-images.githubusercontent.com/7141537/103563062-264d8500-4e8a-11eb-888f-c5e0647cbf2d.PNG)
 
-## Norrar registro 
+## Eliminar registro 
 ![3](https://user-images.githubusercontent.com/7141537/103563061-25b4ee80-4e8a-11eb-82c1-fe33b2d1b103.PNG)
 
 ## Vista agregar Gasto
