@@ -1,35 +1,45 @@
 export const expenseColumnsData = [
   {
-    dataField: "id",
-    text: "ID",
+    accessor: "id",
+    Header: "ID",
   },
   {
-    dataField: "category",
-    text: "Categoria",
-    sort: true,
+    accessor: "category",
+    Header: "Categoria",
   },
   {
-    dataField: "codeBill",
-    text: "Nro. de Factura",
+    accessor: "codeBill",
+    Header: "Nro. de Factura",
   },
   {
-    dataField: "bill",
-    text: "Compañia / Empresa",
+    accessor: "bill",
+    Header: "Compañia / Empresa",
   },
   {
-    dataField: "date",
-    text: "Fecha",
+    accessor: "date",
+    Header: "Fecha",
   },
   {
-    dataField: "RUC",
-    text: "RUC",
+    accessor: "RUC",
+    Header: "RUC",
   },
   {
-    dataField: "description",
-    text: "Descripción",
+    accessor: "description",
+    Header: "Descripción",
   },
   {
-    dataField: "total",
-    text: "Total",
+    accessor: "total",
+    Header: "Total",
+    Footer: (
+      <span>
+        <strong>Total Final:</strong> 15
+      </span>
+    ),
+  },
+  {
+    Header: "Actions",
+    accessor: "actions",
+    sortable: false,
+    filterable: false,
   },
 ];

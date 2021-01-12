@@ -2,3 +2,10 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.ReactTable span {
+    color: black;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+}

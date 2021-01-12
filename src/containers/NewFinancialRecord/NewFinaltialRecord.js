@@ -3,23 +3,55 @@ import { useForm, Controller } from "react-hook-form";
 import { categoriesData } from "../../data/data-dummy";
 import { Icon, Grid } from "semantic-ui-react";
 import DatePicker from "react-datepicker";
+import { useDispatch } from "react-redux";
+import moment from "moment";
+import { useHistory } from "react-router-dom";
 
 import "./NewFinantialRecord.css";
 import "react-datepicker/dist/react-datepicker.css";
+
+import * as actionTypes from "../../store/actions";
 
 const NewFinaltialRecord = (props) => {
   const [categories, setCategories] = useState();
 
   const { register, handleSubmit, errors, setValue, control } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const dispatch = useDispatch();
+
+  const history = useHistory();
+
+  const onSubmit = (data) => {
+    console.log(111, data);
+
+    const category = categories.filter((item) => item.name === data.category);
+    console.log("category: ", category[0]);
+
+    dispatch(
+      actionTypes.addExpense({
+        id: new Date().getTime(),
+        category: category[0].id,
+        codeBill: data.codeBill,
+        bill: data.company,
+        date: moment(data.date).format("DD/MM/YYYY"),
+        RUC: data.RUC,
+        total: data.total,
+        description: data.description,
+      })
+      // .then(() => {
+      //   console.log("Done!");
+      // })
+    );
+    //history.push("/records");
+  };
 
   useEffect(() => {
     setCategories(categoriesData);
   }, [categoriesData]);
 
   const categoryHandler = (item, value) => {
-    setValue("category", value.name);
+    const category = categories.filter((data) => data.image === value.name);
+    setValue("category", category[0].name);
   };
 
   return (

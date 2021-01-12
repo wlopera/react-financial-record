@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 
-import BootstrapTable from "react-bootstrap-table-next";
-import filterFactory from "react-bootstrap-table2-filter";
-import paginationFactory from "react-bootstrap-table2-paginator";
-
 import { useSelector, useDispatch } from "react-redux";
 import * as actionTypes from "../../store/actions";
 import { Icon } from "semantic-ui-react";
+import { Card, CardBody, CardTitle, Button } from "reactstrap";
 
-import "./Financialrecord.css";
+import ReactTable from "react-table";
+
+import "./FinancialRecord.css";
+
+import "react-table/react-table.css";
 
 const FinancialRecord = (props) => {
   const [expenses, setExpenses] = useState();
@@ -17,71 +18,60 @@ const FinancialRecord = (props) => {
   const categoryData = useSelector((state) => state.category);
   const expenseData = useSelector((state) => state.expense);
 
-  console.log(123, categoryData);
-  console.log(456, expenseColumns);
-
   useEffect(() => {
-    categoryData.push({
-      dataField: "actions",
-      text: "Acciones",
-      headerAlign: "center",
-      align: "center",
-      formatter: (cell, row) => (
-        <button onClick={() => dispatch(actionTypes.deleteExpense(row.id))}>
-          <Icon name="pencil" />
-        </button>
-      ),
-    });
     setExpenseColumns(categoryData);
-
-    return () => {
-      categoryData.pop();
-    };
-  }, []);
+  }, [categoryData]);
 
   useEffect(() => {
-    setExpenses(expenseData);
+    const data = expenseData.map((prop, key) => {
+      return {
+        ...prop,
+        actions: (
+          <button onClick={() => dispatch(actionTypes.deleteExpense(prop.id))}>
+            <Icon name="pencil" />
+          </button>
+        ),
+      };
+    });
+
+    setExpenses(data);
   }, [expenseData]);
 
   const dispatch = useDispatch();
 
-  const addExpense = () => {
-    dispatch(
-      actionTypes.addExpense({
-        id: new Date().getTime(),
-        category: 12,
-        codeBill: "ADVF-5647-56774",
-        bill: "Famacia Cruz Azul",
-        date: "01-01-2021",
-        total: 30.55,
-        RUC: "543-12-45362 DV 65",
-        description: "Medicinas en general",
-      })
-    );
-  };
-
-  const deleteExpense = () => {
-    dispatch(actionTypes.deleteExpense(5));
-  };
-
   return (
     <div>
-      <div className="recordButton">
-        <button className="btn btn-primary" onClick={addExpense}>
-          Agregar
-        </button>
-      </div>
-      <br />
-      {expenses && (
-        <BootstrapTable
-          striped
-          hover
-          keyField="id"
-          data={expenses}
-          columns={expenseColumns}
-          filter={filterFactory()}
-          pagination={paginationFactory()}
-        />
+      {expenses !== undefined && (
+        <Card>
+          <CardTitle className="bg-light border-bottom p-3 mb-0">
+            <i className="mdi mdi-border-right mr-2"></i>Basic Table
+          </CardTitle>
+          <CardBody>
+            <ReactTable
+              data={expenses}
+              columns={expenseColumns}
+              defaultPageSize={5}
+              previousText="Anterior"
+              nextText="Siguiente"
+              loadingText="Cargando..."
+              noDataText="No existen registros"
+              pageText="Páginas"
+              ofText="de"
+              rowsText="filas"
+              className="-striped -highlight"
+              footerClassName="-striped -highlight"
+              showPaginationBottom={true}
+              showPageSizeOptions={true}
+              headerStyle={{ color: "blue" }}
+              onSortedChange={(newSorted, column, shiftKey) => {
+                console.log(12345, column);
+              }}
+              style={{
+                height: "400px", // This will force the table body to overflow and scroll, since there is not enough room
+              }}
+            />
+          </CardBody>
+        </Card>
       )}
     </div>
   );
