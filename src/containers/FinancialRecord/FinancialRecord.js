@@ -54,7 +54,7 @@ const FinancialRecord = (props) => {
               previousText="Anterior"
               nextText="Siguiente"
               loadingText="Cargando..."
-              noDataText="No existen registros"
+              noDataText="No existen registros a cargar"
               pageText="Páginas"
               ofText="de"
               rowsText="filas"
